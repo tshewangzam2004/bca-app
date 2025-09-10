@@ -1,9 +1,18 @@
-const express=require("express");
-const app=express();
-const port=process.env.PORT || 8080;
-app.get("/",(req,res)=>{
-    res.send("hello world");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 8080;
+
+// Route for homepage
+app.get("/", (req, res) => {
+  res.send("Hello World 🌍 - This is my backend running on Express!");
 });
-app.listen(port, ()=>{
-    console.log("server started on port 8080")
-})
+
+// Another example route
+app.get("/about", (req, res) => {
+  res.send("This is the About page of my backend app.");
+});
+
+// Start server
+app.listen(port, () => {
+  console.log(`✅ Server started at http://localhost:${port}`);
+});
